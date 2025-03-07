@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Babysitting Service for Foreign Visitors</title>
+  <title>Japan Babysitting Service for Foreign Visitors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1158,7 +1158,7 @@
   <header>
     <div class="container">
       <nav>
-        <div class="logo"><a href="#" onclick="showSection('home')">Babysitter Service</a></div>
+        <div class="logo"><a href="#" onclick="showSection('home')">Japan Babysitter Service</a></div>
         <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
         <ul id="navMenu">
           <li><a href="#" onclick="showSection('home')">Home</a></li>
@@ -1483,7 +1483,8 @@
     const mobileNavToggle = document.getElementById('mobileNavToggle');
     const navMenu = document.getElementById('navMenu');
     
-    mobileNavToggle.addEventListener('click', function() {
+    mobileNavToggle.addEventListener('click', function(event) {
+      event.stopPropagation(); // Prevent the click from bubbling up
       navMenu.classList.toggle('active');
       if (navMenu.classList.contains('active')) {
         document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
