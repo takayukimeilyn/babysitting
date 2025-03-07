@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Babysitting Service for Foreign Visitors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,7 +119,10 @@
     .hero-slide::after {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5));
     }
     
@@ -548,6 +551,108 @@
       }
     }
     
+    /* Service Features Section */
+    .service-features {
+      background-color: #f8f9fa;
+      padding: 5em 0;
+      position: relative;
+    }
+    
+    .service-features .section-header {
+      text-align: center;
+      margin-bottom: 3em;
+    }
+    
+    .service-features .section-header h2 {
+      font-size: 2.5em;
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5em;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .service-features .section-header h2:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #3498db, #2980b9);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .service-features .section-header p {
+      font-size: 1.2em;
+      color: #7f8c8d;
+      max-width: 700px;
+      margin: 1.5em auto 0;
+    }
+    
+    .features-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 2em;
+    }
+    
+    .feature-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 2.5em;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .feature-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, #3498db, #2980b9);
+    }
+    
+    .feature-icon {
+      font-size: 3em;
+      margin-bottom: 0.8em;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .feature-card h3 {
+      color: #2c3e50;
+      font-size: 1.3em;
+      margin-bottom: 1em;
+      font-weight: 600;
+    }
+    
+    .feature-card p {
+      color: #7f8c8d;
+      font-size: 1em;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    
+    @media (max-width: 767px) {
+      .features-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     /* How It Works Section */
     .how-it-works {
       margin: 5em auto;
@@ -866,6 +971,183 @@
       font-size: 1.2em;
       margin-bottom: 0.5em;
     }
+    
+    /* Mobile Navigation */
+    .mobile-nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      font-size: 1.8em;
+      color: #3498db;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    /* Media Queries for Responsive Design */
+    @media (max-width: 991px) {
+      /* Navigation */
+      .mobile-nav-toggle {
+        display: block;
+      }
+      
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 30px 30px;
+        transition: all 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 999;
+      }
+      
+      nav ul.active {
+        right: 0;
+      }
+      
+      nav ul li {
+        margin: 0;
+        width: 100%;
+        margin-bottom: 1.5em;
+      }
+      
+      /* Hero section */
+      .hero h1 {
+        font-size: 2.8em;
+      }
+      
+      .hero p {
+        font-size: 1.2em;
+      }
+      
+      /* Challenges and Solutions section */
+      .challenges-solutions .container {
+        flex-direction: column;
+      }
+      
+      .challenges-content, .solutions-content {
+        width: 100%;
+        padding: 1em;
+      }
+      
+      .connect-arrow.arrow-right {
+        display: none;
+      }
+      
+      /* Steps */
+      .step {
+        margin: 0 0 3em;
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      /* Testimonials */
+      .testimonial-card {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      /* General */
+      .container {
+        width: 95%;
+      }
+      
+      section {
+        padding: 4em 0;
+      }
+      
+      /* Hero section */
+      .hero {
+        min-height: 90vh;
+      }
+      
+      .hero h1 {
+        font-size: 2.2em;
+      }
+      
+      .hero p {
+        font-size: 1em;
+      }
+      
+      /* Buttons */
+      .btn {
+        padding: 0.8em 1.8em;
+        font-size: 0.85em;
+      }
+      
+      /* Challenges and Solutions illustrations */
+      .challenges-illustration,
+      .solutions-illustration {
+        height: 180px;
+      }
+      
+      .illustration-icons {
+        font-size: 2em;
+      }
+      
+      /* Form */
+      form {
+        padding: 1.5em;
+      }
+      
+      /* Candidates */
+      .candidate-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .candidate-card img {
+        margin: 0 0 1.5em;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      /* Hero section */
+      .hero h1 {
+        font-size: 1.8em;
+      }
+      
+      /* Section headings */
+      .section-header h2, 
+      .how-it-works h2, 
+      .challenges-content h2, 
+      .solutions-content h2,
+      section#request h2, 
+      section#candidates h2, 
+      section#dashboard h2 {
+        font-size: 1.8em;
+      }
+      
+      /* Icons */
+      .step-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+      }
+      
+      .challenge-icon, .solution-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+        margin-right: 1em;
+      }
+      
+      /* Testimonials */
+      .testimonial-card {
+        padding: 1.5em;
+      }
+      
+      .testimonial-text {
+        font-size: 0.95em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -877,7 +1159,8 @@
     <div class="container">
       <nav>
         <div class="logo"><a href="#" onclick="showSection('home')">Babysitter Service</a></div>
-        <ul>
+        <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+        <ul id="navMenu">
           <li><a href="#" onclick="showSection('home')">Home</a></li>
           <li><a href="#" onclick="showSection('request')">Request</a></li>
           <li><a href="#" onclick="showSection('candidates')">Babysitters</a></li>
@@ -899,8 +1182,8 @@
           <div class="hero-slide" style="background-image: url('image3.jpg');"></div>
         </div>
         <div class="hero-content">
-          <h1>Babysitting Service <br>for Foreign Visitors</h1>
-          <p>We match you with <span class="highlight">trusted babysitters</span>, carefully selected from the best candidates for your needs.</p>
+          <h1>Japan Babysitting Service <br>for International Visitors</h1>
+          <p>Traveling to Japan? We match you with <span class="highlight">trusted local babysitters</span>, carefully selected to make your family's stay in Japan comfortable and worry-free.</p>
           <a href="#" class="btn" onclick="showSection('request')">Request Now</a>
         </div>
         <div class="hero-pagination">
@@ -910,99 +1193,36 @@
         </div>
       </div>
       
-      <div class="challenges-solutions">
+      <div class="service-features">
         <div class="container">
           <div class="section-header">
-            <h2>Why Choose Our Service?</h2>
-            <p>Babysitting in a foreign country presents <span class="highlight">unique challenges</span>, but our service makes it easy and stress-free.</p>
-          </div>
-        </div>
-        
-        <div class="container">
-          <div class="challenges-content">
-            <h2>Challenges for Visitors</h2>
-            
-            <div class="visual-container">
-              <div class="challenges-illustration">
-                <div class="illustration-icons">
-                  <div class="illustration-icon">❓</div>
-                  <div class="illustration-icon">🗣️</div>
-                  <div class="illustration-icon">📝</div>
-                  <div class="illustration-icon">😟</div>
-                  <div class="illustration-icon">⚠️</div>
-                  <div class="illustration-icon">🔍</div>
-                </div>
-              </div>
-              <div class="connect-arrow arrow-right">➡️</div>
-              <div class="connect-arrow arrow-down">⬇️</div>
-            </div>
-            
-            <div class="challenge-item">
-              <div class="challenge-icon">🔍</div>
-              <div class="challenge-text">
-                <h3>Finding Reliable Services</h3>
-                <p>As a visitor to Japan, it's difficult to know which babysitting service to trust when you're unfamiliar with local options.</p>
-              </div>
-            </div>
-            
-            <div class="challenge-item">
-              <div class="challenge-icon">🗣️</div>
-              <div class="challenge-text">
-                <h3>Language Barriers</h3>
-                <p>Most babysitting services in Japan operate entirely in Japanese, making the booking process challenging for non-Japanese speakers.</p>
-              </div>
-            </div>
-            
-            <div class="challenge-item">
-              <div class="challenge-icon">📋</div>
-              <div class="challenge-text">
-                <h3>Complex Procedures</h3>
-                <p>The process of vetting, booking, and arranging payment for babysitters in Japan often involves complicated procedures that can be overwhelming.</p>
-              </div>
-            </div>
+            <h2>Our Services</h2>
+            <p>We make babysitting in Japan <span class="highlight">simple and stress-free</span> for international visitors</p>
           </div>
           
-          <div class="vs-divider">VS</div>
-          
-          <div class="solutions-content">
-            <h2>Our Solution</h2>
-            
-            <div class="visual-container">
-              <div class="solutions-illustration">
-                <div class="illustration-icons">
-                  <div class="illustration-icon">✅</div>
-                  <div class="illustration-icon">🌐</div>
-                  <div class="illustration-icon">🤝</div>
-                  <div class="illustration-icon">😊</div>
-                  <div class="illustration-icon">🛡️</div>
-                  <div class="illustration-icon">💯</div>
-                </div>
-              </div>
-              <div class="connect-arrow arrow-down">⬇️</div>
+          <div class="features-container">
+            <div class="feature-card">
+              <div class="feature-icon">🌏</div>
+              <h3>Local Experts in Japan</h3>
+              <p>Our specialized staff based in Japan carefully selects the best babysitters from multiple agencies to match your specific needs.</p>
             </div>
             
-            <div class="solution-item">
-              <div class="solution-icon">✓</div>
-              <div class="solution-text">
-                <h3>Vetted Professionals</h3>
-                <p>We carefully select and screen all our babysitters to ensure they are qualified, experienced, and trustworthy.</p>
-              </div>
+            <div class="feature-card">
+              <div class="feature-icon">📝</div>
+              <h3>Hassle-Free Registration</h3>
+              <p>We handle all the complex paperwork and registration processes. You simply review and confirm the final arrangements.</p>
             </div>
             
-            <div class="solution-item">
-              <div class="solution-icon">🌐</div>
-              <div class="solution-text">
-                <h3>Multilingual Support</h3>
-                <p>Our entire service is available in English, eliminating language barriers and making the process smooth and stress-free.</p>
-              </div>
+            <div class="feature-card">
+              <div class="feature-icon">🗣️</div>
+              <h3>Multilingual Support</h3>
+              <p>Full English language support throughout the entire process, from booking to feedback after your babysitting session.</p>
             </div>
             
-            <div class="solution-item">
-              <div class="solution-icon">🤝</div>
-              <div class="solution-text">
-                <h3>Hassle-Free Process</h3>
-                <p>We handle all the <span class="highlight">complex arrangements</span> on your behalf, from finding the right match to managing payments and ensuring clear communication.</p>
-              </div>
+            <div class="feature-card">
+              <div class="feature-icon">✓</div>
+              <h3>Vetted Professionals</h3>
+              <p>Every babysitter is thoroughly screened, background-checked, and interviewed to ensure the highest level of care for your children.</p>
             </div>
           </div>
         </div>
@@ -1090,10 +1310,8 @@
             </div>
           </div>
         </div>
-        <div class="section-nav">
-          <button class="next-section" data-next="request">
-            <span>Book Now</span>
-          </button>
+        <div class="section-nav" style="text-align: center; margin-top: 3em;">
+          <a href="#" class="btn" onclick="showSection('request')">Request Now</a>
         </div>
       </div>
     </section>
@@ -1162,12 +1380,6 @@
         </ul>
       </div>
     </section>
-
-    <div class="section-nav">
-      <button class="next-section" data-next="testimonials">
-        <span>Reviews</span>
-      </button>
-    </div>
   </main>
 
   <!-- フッター -->
@@ -1266,6 +1478,53 @@
     
     // Initialize active dot
     updateActiveDot('home');
+    
+    // Mobile Navigation functionality
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    mobileNavToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        mobileNavToggle.innerHTML = '✕'; // Change to close icon
+      } else {
+        document.body.style.overflow = ''; // Re-enable scrolling
+        mobileNavToggle.innerHTML = '☰'; // Change back to menu icon
+      }
+    });
+    
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 991) {
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+          mobileNavToggle.innerHTML = '☰';
+        }
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navMenu.contains(event.target);
+      const isClickOnToggle = mobileNavToggle.contains(event.target);
+      
+      if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        mobileNavToggle.innerHTML = '☰';
+      }
+    });
+    
+    // Handle resize events
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 991 && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        mobileNavToggle.innerHTML = '☰';
+      }
+    });
     
     // Scroll event to update active dot based on scroll position
     window.addEventListener('scroll', function() {
